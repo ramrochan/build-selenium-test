@@ -53,6 +53,7 @@ public class LightingPage extends BasePage{
 	@FindBy(xpath = "//strong[text()='Free Shipping!']")
 	private WebElement freeShipping;
 	
+	// Add the product to cart
 	public AddToCartPage addProductToCart() {
 		closeEmailSubscription();
 		wait.until(ExpectedConditions.elementToBeClickable(goToCartButton));
@@ -74,12 +75,13 @@ public class LightingPage extends BasePage{
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		
 	}
-	
+	// Closes the subscribe popup
 	public void closeEmailSubscription(){
 		wait.until(ExpectedConditions.elementToBeClickable(closePopUp));
 		closePopUp.click();
 	}
 
+	// Add the first filter
 	public int addFirstFilter() {
 		closeEmailSubscription();
 		wait.until(ExpectedConditions.elementToBeClickable(additionalColor));
@@ -90,6 +92,8 @@ public class LightingPage extends BasePage{
 		return count;
 	}
 
+	
+	// Add the second filter
 	public int addSecondFilter() {
 		wait.until(ExpectedConditions.visibilityOf(secondFilterFixture));
 		scrollToAnElement(secondFilterFixture);

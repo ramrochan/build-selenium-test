@@ -32,6 +32,7 @@ public class BathroomSinksPage extends BasePage{
 	@FindBy(xpath = "(//div[@class='modal-header table modal-no-title']//button[@class='close js-modal-close '])[2]")
 	private WebElement closePopUp;
 	
+	//Add product to cart
 	public AddToCartPage addSecondProductToCart() {
 		wait.until(ExpectedConditions.elementToBeClickable(goToCartButton));
 		closeEmailSubscription();
@@ -47,6 +48,7 @@ public class BathroomSinksPage extends BasePage{
 		
 	}
 	
+	// Closes the subscribe popup
 	public void closeEmailSubscription(){
 		wait.until(ExpectedConditions.elementToBeClickable(closePopUp));
 		closePopUp.click();

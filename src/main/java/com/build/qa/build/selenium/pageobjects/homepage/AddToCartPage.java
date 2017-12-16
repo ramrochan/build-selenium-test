@@ -49,11 +49,13 @@ public class AddToCartPage extends BasePage {
 	@FindBy(xpath = ".//button[@class='button-primary button js-email-cart-submit-button']")
 	private WebElement sendEmail;
 	
+	// Returns the product which has been added to the cart
 	public String getProductText(){
 		wait.until(ExpectedConditions.elementToBeClickable(productAddedToCart));
 		return productAddedToCart.getText();
 	}
 
+	// Email the cart with the product in the cart
 	public String emailCart() {
 		wait.until(ExpectedConditions.elementToBeClickable(dropDownClick));
 		dropDownClick.click();

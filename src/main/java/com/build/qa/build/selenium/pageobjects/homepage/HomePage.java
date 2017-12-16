@@ -34,11 +34,13 @@ public class HomePage extends BasePage {
 		return wait.until(ExpectedConditions.presenceOfElementLocated(buildThemeBody)) != null;
 	}
 	
+	// Closes the subscribe popup
 	public void closeEmailSubscription(){
 		wait.until(ExpectedConditions.elementToBeClickable(closePopUp));
 		closePopUp.click();
 	}
 	
+
 	public LandingPage searchText(){
 		closeEmailSubscription();
 		wait.until(ExpectedConditions.visibilityOf(clickSearch));
