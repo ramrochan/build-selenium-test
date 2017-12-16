@@ -39,6 +39,7 @@ public class BathroomSinksPage extends BasePage{
 		secondItem.click();
 		wait.until(ExpectedConditions.elementToBeClickable(goToCartButton));
 		scrollToAnElement(freeShipping);
+		wait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
 		addToCartButton.click();
 		wait.until(ExpectedConditions.elementToBeClickable(goToCartButton));
 		goToCartButton.click();

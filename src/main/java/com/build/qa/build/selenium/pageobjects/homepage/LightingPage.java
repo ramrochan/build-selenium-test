@@ -32,10 +32,13 @@ public class LightingPage extends BasePage{
 	@FindBy(xpath = "//label[@class='sub-item qa-facetGroup-Color-facetValue-Blues']")
 	private WebElement firstFilterColor;
 	
+	@FindBy(xpath = "//label[@class='sub-item qa-facetGroup-Color-facetValue-Chromes']")
+	private WebElement additionalColor;
+	
 	@FindBy(xpath = "//span[@class='js-num-results']")
 	private WebElement resultCount;
 	
-	@FindBy(xpath = "//label[@class='sub-item qa-facetGroup-Fixture Type-facetValue-Bathroom Sconce']")
+	@FindBy(xpath = "//label[@data-facet-value='Vanity Light']")
 	private WebElement secondFilterFixture;
 	
 	@FindBy(xpath = "//div[@class='text-price' ]")
@@ -47,12 +50,18 @@ public class LightingPage extends BasePage{
 	@FindBy(xpath = "//label[@class='sub-item qa-facetGroup-Color-facetValue-Blues']//span[@class='count']")
 	private WebElement firstFilterColorCount;
 	
+	@FindBy(xpath = "//strong[text()='Free Shipping!']")
+	private WebElement freeShipping;
+	
 	public AddToCartPage addProductToCart() {
 		closeEmailSubscription();
 		wait.until(ExpectedConditions.elementToBeClickable(goToCartButton));
 		scrollToAnElement(firstItem);
 		firstItem.click();
 		wait.until(ExpectedConditions.visibilityOf(textPrice));
+		System.out.println(textPrice.getText());
+		scrollToAnElement(freeShipping);
+		wait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
 		scrollToAnElement(addToCartButton);
 		wait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
 		addToCartButton.click();
@@ -73,25 +82,25 @@ public class LightingPage extends BasePage{
 
 	public int addFirstFilter() {
 		closeEmailSubscription();
-		wait.until(ExpectedConditions.elementToBeClickable(goToCartButton));
+		wait.until(ExpectedConditions.elementToBeClickable(additionalColor));
 		scrollToAnElement(firstFilterColor);
 		firstFilterColor.click();
-		wait.until(ExpectedConditions.elementToBeClickable(goToCartButton));
+		wait.until(ExpectedConditions.visibilityOf(resultCount));
 		int count=Integer.parseInt(resultCount.getText());
 		return count;
 	}
 
 	public int addSecondFilter() {
-		driver.navigate().to("https://www.build.com/bathroom-lighting/c108533?f19208=blues&r=48&s=SCORE&p=1&categoryId=108533");
-		wait.until(ExpectedConditions.elementToBeClickable(goToCartButton));
+		wait.until(ExpectedConditions.visibilityOf(secondFilterFixture));
 		scrollToAnElement(secondFilterFixture);
 		secondFilterFixture.click();
-		wait.until(ExpectedConditions.elementToBeClickable(goToCartButton));
-		int count=Integer.parseInt(resultCount.getText());
-		return count;
+		wait.until(ExpectedConditions.visibilityOf(resultCount));
+		int count2=Integer.parseInt(resultCount.getText());
+		System.out.println(count2);
+		return count2;
 	}
 
-	public Object getFirstFilteredResultCountFromElement() {
+	/*public Object getFirstFilteredResultCountFromElement() {
 		driver.navigate().to("https://www.build.com/bathroom-lighting/c108533?f19208=blues&r=48&s=SCORE&p=1&categoryId=108533");
 		wait.until(ExpectedConditions.visibilityOf(resultCount));
 		return Integer.parseInt(resultCount.getText());
@@ -101,7 +110,7 @@ public class LightingPage extends BasePage{
 		driver.navigate().to("https://www.build.com/bathroom-lighting/c108533?f19213=bathroom%20sconce&f19208=blues&r=48&s=SCORE&p=1&categoryId=108533");
 		wait.until(ExpectedConditions.visibilityOf(resultCount));
 		return Integer.parseInt(resultCount.getText());
-	}
+	}*/
 	
 	
 }

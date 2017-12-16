@@ -15,7 +15,7 @@ public class BuildTest extends BaseFramework {
 	 * Extremely basic test that outlines some basic
 	 * functionality and page objects as well as assertJ
 	 */
-	/*@Test
+	@Test
 	public void navigateToHomePage() { 
 		driver.get(getConfiguration("HOMEPAGE"));
 		HomePage homePage = new HomePage(driver, wait);
@@ -23,14 +23,14 @@ public class BuildTest extends BaseFramework {
 		softly.assertThat(homePage.onBuildTheme())
 			.as("The website should load up with the Build.com desktop theme.")
 			.isTrue();
-	}*/
+	}
 	
 	/** 
 	 * Search for the Quoizel MY1613 from the search bar
 	 * @assert: That the product page we land on is what is expected by checking the product title
 	 * @difficulty Easy
 	 */
-	/*@Test
+	@Test
 	public void searchForProductLandsOnCorrectProduct() { 
 		driver.get(getConfiguration("HOMEPAGE"));
 		HomePage homePage= new HomePage(driver, wait);
@@ -39,7 +39,7 @@ public class BuildTest extends BaseFramework {
 			.as("The search text result should have heading as Quoizel MY1613ML")
 			.isEqualToIgnoringCase("Quoizel MY1613ML");
 		
-	}*/
+	}
 	
 	/** 
 	 * Go to the Bathroom Sinks category directly (https://www.build.com/bathroom-sinks/c108504) 
@@ -47,7 +47,7 @@ public class BuildTest extends BaseFramework {
 	 * @assert: the product that is added to the cart is what is expected
 	 * @difficulty Easy-Medium
 	 */
-	/*@Test
+	@Test
 	public void addProductToCartFromCategoryDrop() { 
 		driver.get(getConfiguration("BATHROOM"));
 		BathroomSinksPage sinksPage= new BathroomSinksPage(driver, wait);
@@ -56,7 +56,7 @@ public class BuildTest extends BaseFramework {
 			.as("The search text result should be have text containing Kohler K-2355")
 			.contains("Kohler K-2355");
 		
-	}*/
+	}
 	
 	/** 
 	 * Add a product to the cart and email the cart to yourself, also to my email address: jgilmore+SeleniumTest@build.com
@@ -64,7 +64,7 @@ public class BuildTest extends BaseFramework {
 	 * @assert that the "Cart Sent" success message is displayed after emailing the cart
 	 * @difficulty Medium-Hard
 	 */
-	/*@Test 
+	@Test 
 	public void addProductToCartAndEmailIt() { 
 		// Navigating to the lighting page
 		driver.get(getConfiguration("LIGHTING"));
@@ -75,7 +75,7 @@ public class BuildTest extends BaseFramework {
 			.as("Message sent should trigger an Alert with message Cart Sent")
 			.contains("Cart Sent");
 		
-	}*/
+	}
 	
 	/** 
 	 * Go to a category drop page (such as Bathroom Faucets) and narrow by
