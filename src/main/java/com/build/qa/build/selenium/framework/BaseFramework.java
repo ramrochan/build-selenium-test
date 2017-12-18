@@ -34,7 +34,7 @@ public abstract class BaseFramework {
 	protected WebDriver driver;
 	protected Wait<WebDriver> wait;
 	private static final Logger LOG = LoggerFactory.getLogger(BaseFramework.class);
-	private static final String CONFIG_FILE = "./conf/automation.properties";
+	private static final String CONFIG_FILE = "./conf/automations.properties";
 	private static final String DRIVER_FIREFOX = "firefox";
 	private static final String DRIVER_CHROME = "chrome";
 	private static final String DRIVER_SAFARI = "safari";
@@ -66,9 +66,6 @@ public abstract class BaseFramework {
 			capabilities = DesiredCapabilities.chrome();
 			driver = new ChromeDriver(capabilities);
 		} else if (DRIVER_FIREFOX.equalsIgnoreCase(System.getProperty("BROWSER"))) {
-			capabilities = DesiredCapabilities.firefox();
-			driver = new FirefoxDriver(capabilities);
-		}else if(DRIVER_FIREFOX.equalsIgnoreCase(configuration.getProperty("BROWSER"))){
 			capabilities = DesiredCapabilities.firefox();
 			driver = new FirefoxDriver(capabilities);
 		}else if(DRIVER_SAFARI.equalsIgnoreCase(System.getProperty("BROWSER"))){
