@@ -71,6 +71,9 @@ public abstract class BaseFramework {
 		}else if(DRIVER_SAFARI.equalsIgnoreCase(System.getProperty("BROWSER"))){
 			capabilities = DesiredCapabilities.safari();
 			driver = new SafariDriver(capabilities);
+		}else if(DRIVER_FIREFOX.equalsIgnoreCase(configuration.getProperty("BROWSER"))){
+			capabilities = DesiredCapabilities.firefox();
+			driver = new FirefoxDriver(capabilities);
 		}
 		
 		else {
