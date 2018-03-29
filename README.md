@@ -1,4 +1,4 @@
-
+Sample project for an ecommerce website build.com
 Assumptions:
 
 * All the Webdrivers should be added to the system path
