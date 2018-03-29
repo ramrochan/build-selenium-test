@@ -1,12 +1,3 @@
-# build-selenium-test
-Test Assessment for Build.com Automation Engineers
-
-Completed Things:
-
-* Appium has been integrated into the tests for Safari on iOS and Chrome on Android
-* Tests will run in various browser like Safari, Chrome, Firefox
-* All the test are completed
-
 
 Assumptions:
 

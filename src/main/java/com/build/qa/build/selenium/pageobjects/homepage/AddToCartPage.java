@@ -64,8 +64,8 @@ public class AddToCartPage extends BasePage {
 		wait.until(ExpectedConditions.visibilityOf(myName));
 		myName.sendKeys("Ram");
 		myEmail.sendKeys("rochanram@gmail.com");
-		receiverName.sendKeys("Jared");
-		receiverEmail.sendKeys("jgilmore+SeleniumTest@build.com");
+		receiverName.sendKeys("test");
+		receiverEmail.sendKeys("test@gmail.com");
 		scrollToAnElement(message);
 		message.sendKeys("This is Ram, sending you a cart from my automation!");
 		scrollToAnElement(sendEmail);
